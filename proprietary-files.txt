@@ -1,17 +1,18 @@
-system/lib/libMali.so
-system/lib/egl/libEGL_mali.so
-system/lib/egl/libGLESv1_CM_mali.so
-system/lib/egl/libGLESv2_mali.so
-system/lib/libion_mtk.so
-system/lib/libmtk_mali_user.so
-system/lib/libm4u.so
-system/lib/libdpframework.so
-system/lib/libgralloc_extra.so
 system/lib/hw/gralloc.mt8127.so
 system/lib/hw/audio.primary.mt8127.so
 system/lib/hw/camera.mt8127.so
 system/lib/hw/lights.default.so
 system/lib/hw/sensors.mt8127.so
+system/lib/egl/libEGL_mali.so
+system/lib/egl/libGLESv1_CM_mali.so
+system/lib/egl/libGLESv2_mali.so
+
+system/lib/libMali.so
+system/lib/libion_mtk.so
+system/lib/libmtk_mali_user.so
+system/lib/libm4u.so
+system/lib/libdpframework.so
+system/lib/libgralloc_extra.so
 system/lib/libcam.utils.so
 system/lib/libaed.so
 system/lib/libaudiocompensationfilter.so
@@ -41,11 +42,6 @@ system/lib/libmtk_drvb.so
 system/lib/libnvram_platform.so
 system/lib/libnvram_sec.so
 
-### hwcomposer FAIL if libtz_uree.so added
-###system/lib/libtz_uree.so
-
-
-
 # can be built from cm source ?
 system/lib/libion.so
 system/lib/hw/audio_policy.stub.so
@@ -54,11 +50,12 @@ system/vendor/lib/mediadrm/libdrmclearkeyplugin.so
 system/vendor/lib/mediadrm/libdrmclearkeyplugin.so
 system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 
-
 # build from a hardware/mediatek repo instead ?
 system/lib/libcam_utils.so
 system/lib/libcam.exif.so
 ###system/lib/hw/hwcomposer.mt8127.so
+### hwcomposer FAIL if libtz_uree.so added
+###system/lib/libtz_uree.so
 
 
 # Vendor
@@ -67,7 +64,6 @@ system/vendor/app/DsUI/DsUI.apk
 # 16/01/2015 system/vendor/etc/audio_effects.conf
 system/vendor/etc/audio_effects.conf
 system/etc/media_codecs.xml
-
 system/vendor/etc/dolby/ds1-default.xml
 system/vendor/lib/hw/audio.a2dp.blueangel.so
 system/vendor/lib/hw/bluetooth.blueangel.so
@@ -75,4 +71,25 @@ system/vendor/lib/libstagefright_soft_ddpdec.so
 system/vendor/lib/soundfx/libswdap.so
 system/vendor/media/LMspeed_508.emd
 system/vendor/media/PFFprec_600.emd
+# Firmware
+system/etc/firmware/ROMv2_patch_1_0_hdr.bin
+system/etc/firmware/ROMv2_patch_1_1_hdr.bin
+system/etc/firmware/S_ANDRO_SFL.ini
+system/etc/firmware/WIFI_RAM_CODE_8127
+system/etc/firmware/WMT_SOC.cfg
+system/etc/firmware/mt6627/mt6627_fm_v1_coeff.bin
+system/etc/firmware/mt6627/mt6627_fm_v1_patch.bin
+system/etc/firmware/mt6627/mt6627_fm_v2_coeff.bin
+system/etc/firmware/mt6627/mt6627_fm_v2_patch.bin
+system/etc/firmware/mt6627/mt6627_fm_v3_coeff.bin
+system/etc/firmware/mt6627/mt6627_fm_v3_patch.bin
+system/etc/firmware/mt6627/mt6627_fm_v4_coeff.bin
+system/etc/firmware/mt6627/mt6627_fm_v4_patch.bin
+system/etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
+system/etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 
+system/etc/fmr/mt6627_fm_cust.cfg
+system/etc/wifi/p2p_supplicant_overlay.conf
+system/etc/wifi/wpa_supplicant.conf
+system/etc/wifi/wpa_supplicant_overlay.conf
+system/etc/mtk_omx_core.cfg
