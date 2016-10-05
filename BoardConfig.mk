@@ -1,24 +1,29 @@
 USE_CAMERA_STUB := true
 
+# Additional includes
+TARGET_SPECIFIC_HEADER_PATH := device/lenovo/Tab2A710F/include	# moved up 03/10/2016
+
 # inherit from the proprietary version
 -include vendor/lenovo/Tab2A710F/BoardConfigVendor.mk
 
-# Additional includes
-TARGET_SPECIFIC_HEADER_PATH := device/lenovo/Tab2A710F/include
-
+# Platform
 TARGET_BOARD_PLATFORM := mt8127
-TARGET_BOARD_PLATFORM_GPU := mali-450
+TARGET_BOARD_PLATFORM_GPU := mali-450	# mali-450mp4 ? (ford)
+
+# Arch
 TARGET_ARCH := arm
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
-ARCH_ARM_HAVE_NEON := true
+#ARCH_ARM_HAVE_TLS_REGISTER := true	# Comment 03/10/2016
+#ARCH_ARM_HAVE_NEON := true	# Comment 03/10/2016
+
 TARGET_NO_BOOTLOADER := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_BOOTLOADER_BOARD_NAME := Tab2A710F   # ?
+TARGET_BOOTLOADER_BOARD_NAME := Tab2A710F
+TARGET_OTA_ASSERT_DEVICE := Tab2A710F	# added 03/10/2016
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216		# = 16MB (OK with MTKDroidTools value)
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216		# = 16MB (OK with MTKDroidTools value)
@@ -28,23 +33,78 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 132120576		# = 0x07e00000 = 128MB
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false	# Comment ? (ford)
+
+# Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
-
 # Kernel
+#BOARD_MKBOOTIMG_ARGS := 	# add it ? (ford and omni)
 #BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 #TARGET_KERNEL_SOURCE := kernel/lenovo/Tab2A710F
 #TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
-TARGET_PREBUILT_KERNEL := device/lenovo/Tab2A710F/prebuilt/kernel
-TARGET_KMODULES := true
+TARGET_PREBUILT_KERNEL := device/lenovo/Tab2A710F/kernel
+
+#TARGET_KMODULES := true	# Comment 03/10/2016
+
+# MTK
+BOARD_HAS_MTK_HARDWARE := true	# 03/10/2016
+MTK_HARDWARE := true # 03/10/2016
+
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -mfpu=neon -mfloat-abi=softfp
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
+COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD	# added 03/10/2016
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/lenovo/Tab2A710F/prebuilt/egl.cfg
+BOARD_EGL_CFG := device/lenovo/Tab2A710F/egl.cfg
+TARGET_USES_C2D_COMPOSITION := true     # added 03/10/2016
+TARGET_USES_OVERLAY := true     # added 03/10/2016
+TARGET_USES_ION := true     # added 03/10/2016
+TARGET_DISPLAY_USE_RETIRE_FENCE := true     # added 03/10/2016
+MAX_EGL_CACHE_KEY_SIZE := 12*1024     # added 03/10/2016
+MAX_EGL_CACHE_SIZE := 1024*1024     # added 03/10/2016
+
+# Surfaceflinger optimization for VD surfaces     # added 03/10/2016
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true     # added 03/10/2016
+#NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3     # added 03/10/2016
+
+#BLOCK_BASED_OTA := true	# add it later... (ford)
+# CUSTOM RELEASE TOOLS FOR EXTRA LINKS IN UPDATER-SCRIPT        # add it later... (ford)
+#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/lenovo/Tab2A710F/releasetools/ota_from_target_files        # add it later... (ford)
+
+
+# Wifi (added 03/10/2016)
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WLAN_DEVICE := mt66xx
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_FW_PATH_PARAM:="/dev/wmtWifi"
+WIFI_DRIVER_FW_PATH_STA:=STA
+WIFI_DRIVER_FW_PATH_AP:=AP
+WIFI_DRIVER_FW_PATH_STA:=P2P
+
+# BT (added 03/10/2016)
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_MTK := true
+BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lenovo/Tab2A710F/bluetooth
+
+
+# RECOVERY
+TARGET_RECOVERY_FSTAB := device/lenovo/Tab2A710F/recovery/root/recovery.fstab
+TARGET_RECOVERY_INITRC := device/lenovo/Tab2A710F/recovery/root/init.rc
+
+
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
@@ -52,12 +112,6 @@ TARGET_USES_LOGD := true
 
 # libxlog
 TARGET_LDPRELOAD += libxlog.so
-
-# Overlay
-# resource files located in overlay will replace standard repository resources
-BOARD_USES_OVERLAY := true
-DEVICE_PACKAGE_OVERLAYS := \
-	device/lenovo/Tab2A710F/overlay
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
@@ -67,58 +121,3 @@ BOARD_SEPOLICY_DIRS := \
 #       app.te \
 #       system.te \
 
-
-
-#############
-# TEST ZONE #
-#############
-
-PRODUCT_CHARACTERISTICS := tablet
-#BOARD_PROVIDES_RILD := true
-
-# MTK Hardware		# TEST, don't know which are needed or not
-BOARD_HAS_MTK_HARDWARE := true
-MTK_HARDWARE := true
-COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
-COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
-BOARD_CONNECTIVITY_VENDOR := MediaTek
-
-## Test with correct values ? (https://github.com/gingerboy92/android_device_xiaomi_note/blob/master/BoardConfig.mk)
-##BOARD_HAS_MTK := true
-### MTK Partitions Defines
-##MTK_BOOT_DEVICE_NAME := /dev/bootimg
-##MTK_BOOT_DEVICE_SIZE := 16777216
-##MTK_RECOVERY_DEVICE_NAME := /dev/recovery
-##MTK_RECOVERY_DEVICE_SIZE := 16777216
-##MTK_UBOOT_DEVICE_NAME := /dev/uboot
-##MTK_UBOOT_DEVICE_SIZE := 4194304
-##MTK_NVRAM_DEVICE_NAME := /dev/nvram
-##MTK_NVRAM_DEVICE_SIZE := 5242880
-
-
-
-# HWComposer
-BOARD_USES_HWCOMPOSER := true			# A tester
-BOARD_USES_PROPRIETARY_HWC := true		# A tester
-#BOARD_USE_SYSFS_VSYNC_NOTIFICATION := true	# A tester
-
-# Graphics
-BOARD_EGL_WORKAROUND_BUG_10194508 := true
-#BOARD_USES_LEGACY_MTK_AV_BLOB := true
-
-# audio
-#TARGET_PROVIDES_LIBAUDIO := true		# A tester
-BOARD_USES_MTK_AUDIO := true			# A tester
-#BOARD_USES_ALSA_AUDIO:= true			# A tester
-
-# USB OTG and External Sdcard
-TARGET_USES_EXFAT := true
-TARGET_USES_NTFS := true
-
-# Offline charging
-ADDITIONAL_DEFAULT_PROPERTIES += ro.mount.fs=EXT4	# ?
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60

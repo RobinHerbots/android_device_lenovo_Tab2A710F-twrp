@@ -21,7 +21,7 @@ VENDOR=lenovo
 DEVICE=Tab2A710F
 
 # path to stock system dump
-dump_dir=/home/seb/android/lenovo/stock
+dump_dir=/home/seb/android/stock/lp
 
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary
 
