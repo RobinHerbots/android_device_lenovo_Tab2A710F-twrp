@@ -1,5 +1,3 @@
-# init.mt8127usb.rc installed by PixNDom build scripts
-#
 on init
 # Workarunod for USB unknow device issue
 # USB would switch correct function when set properity sys.usb.config
@@ -474,4 +472,3 @@ on property:mediatek.usb.port.mode=usb
 
 on property:mediatek.usb.port.mode=uart
       write /sys/devices/platform/mt_usb/portmode 1
-

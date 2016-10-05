@@ -18,12 +18,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.aee.rc:root/init.aee.rc \
     $(LOCAL_PATH)/ramdisk/init.ssd.rc:root/init.ssd.rc \
     $(LOCAL_PATH)/ramdisk/init.project.rc:root/init.project.rc \
+    $(LOCAL_PATH)/ramdisk/init.charging.rc:root/init.charging.rc \
+    $(LOCAL_PATH)/ramdisk/init.environ.rc:root/init.environ.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.mt8127.rc:root/ueventd.mt8127.rc \
     $(LOCAL_PATH)/ramdisk/factory_init.project.rc:root/factory_init.project.rc \
     $(LOCAL_PATH)/ramdisk/meta_init.rc:root/meta_init.rc \
     $(LOCAL_PATH)/ramdisk/meta_init.project.rc:root/meta_init.project.rc \
-    $(LOCAL_PATH)/ramdisk/factory_init.rc:root/factory_init.rc 
+    $(LOCAL_PATH)/ramdisk/factory_init.rc:root/factory_init.rc \
+    $(LOCAL_PATH)/ramdisk/auto_shutdown.sh:root/auto_shutdown.sh \
+    $(LOCAL_PATH)/ramdisk/enableswap.sh:root/enableswap.sh 
+
 
 # fstab
 PRODUCT_COPY_FILES += \

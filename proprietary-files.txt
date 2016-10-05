@@ -98,7 +98,7 @@ system/lib/libblisrc32.so
 system/lib/libbluetooth_mtk.so
 system/lib/libbluetooth_relayer.so
 system/lib/libbluetoothem_mtk.so
-#lib/libbt-vendor.so	# ?
+#lib/libbt-vendor.so	# build using source, is that right ?
 system/lib/libbwc.so
 system/lib/libcam_hwutils.so
 system/lib/libcam_mmp.so
@@ -204,6 +204,13 @@ system/bin/aee_core_forwarder
 system/bin/aee
 system/bin/aee_archive
 system/bin/aee_dumpstate
+
+# used in init.mt8127.rc
+system/bin/thermal
+system/bin/boot_logo_updater
+system/bin/sbchk
+system/bin/guiext-server
+system/bin/em_svr
 
 system/etc/mtklog-config.prop
 system/etc/mtk_omx_core.cfg
