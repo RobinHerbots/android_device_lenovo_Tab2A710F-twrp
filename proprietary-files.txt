@@ -60,6 +60,7 @@ system/lib/hw/audio.r_submix.default.so
 #lib/hw/audio.sco.default.so
 system/lib/hw/audio.usb.default.so
 system/lib/hw/camera.mt8127.so
+system/lib/hw/gps.default.so
 system/lib/hw/gralloc.default.so
 system/lib/hw/gralloc.mt8127.so
 system/lib/hw/hwcomposer.mt8127.so
