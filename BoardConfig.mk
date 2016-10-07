@@ -8,7 +8,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/lenovo/Tab2A710F/include	# moved up 03/10/
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8127
-TARGET_BOARD_PLATFORM_GPU := mali-450	# mali-450mp4 ? (ford)
+TARGET_BOARD_PLATFORM_GPU := mali-450mp4	# mp4 added 06/10/2016
 
 # Arch
 TARGET_ARCH := arm
@@ -40,7 +40,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false	# Comment ? (ford)
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
 # Kernel
-#BOARD_MKBOOTIMG_ARGS := 	# add it ? (ford and omni)
+#BOARD_MKBOOTIMG_ARGS :=
 #BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
@@ -49,11 +49,20 @@ BOARD_KERNEL_PAGESIZE := 2048
 #TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
 TARGET_PREBUILT_KERNEL := device/lenovo/Tab2A710F/kernel
 
-#TARGET_KMODULES := true	# Comment 03/10/2016
-
 # MTK
 BOARD_HAS_MTK_HARDWARE := true	# 03/10/2016
 MTK_HARDWARE := true # 03/10/2016
+
+# to be used with hardware/mediatek repo
+BOARD_HAS_MTK := true # added 07/10/2016
+MTK_HWC_CHIP := mt8127 # added 07/10/2016
+MTK_HWC_SUPPORT := true # added 07/10/2016
+MTK_WFD_SUPPORT := true # added 07/10/2016
+MTK_PQ_SUPPORT := true # added 07/10/2016
+MTK_ION_SUPPORT := true # added 07/10/2016
+MTK_HDMI_SUPPORT := false # added 07/10/2016
+MTK_SENSOR_SUPPORT := true # added 07/10/2016
+
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -76,10 +85,9 @@ MAX_EGL_CACHE_SIZE := 1024*1024     # added 03/10/2016
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true     # added 03/10/2016
 #NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3     # added 03/10/2016
 
-#BLOCK_BASED_OTA := true	# add it later... (ford)
-# CUSTOM RELEASE TOOLS FOR EXTRA LINKS IN UPDATER-SCRIPT        # add it later... (ford)
+#BLOCK_BASED_OTA := true
+# CUSTOM RELEASE TOOLS FOR EXTRA LINKS IN UPDATER-SCRIPT
 #TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/lenovo/Tab2A710F/releasetools/ota_from_target_files        # add it later... (ford)
-
 
 # Wifi (added 03/10/2016)
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -89,9 +97,9 @@ BOARD_WLAN_DEVICE := mt66xx
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_PARAM:="/dev/wmtWifi"
-WIFI_DRIVER_FW_PATH_STA:=STA
-WIFI_DRIVER_FW_PATH_AP:=AP
-WIFI_DRIVER_FW_PATH_STA:=P2P
+WIFI_DRIVER_FW_PATH_STA := STA
+WIFI_DRIVER_FW_PATH_AP := AP
+WIFI_DRIVER_FW_PATH_STA := P2P
 
 # BT (added 03/10/2016)
 BOARD_HAVE_BLUETOOTH := true
@@ -99,12 +107,9 @@ BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lenovo/Tab2A710F/bluetooth
 
-
 # RECOVERY
 TARGET_RECOVERY_FSTAB := device/lenovo/Tab2A710F/recovery/root/recovery.fstab
 TARGET_RECOVERY_INITRC := device/lenovo/Tab2A710F/recovery/root/init.rc
-
-
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
@@ -120,4 +125,6 @@ BOARD_SEPOLICY_DIRS := \
 #BOARD_SEPOLICY_UNION := \
 #       app.te \
 #       system.te \
-
+#	\
+#	\
+#
