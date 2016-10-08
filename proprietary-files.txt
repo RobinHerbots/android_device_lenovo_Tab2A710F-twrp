@@ -15,7 +15,7 @@ system/bin/audiocmdservice_atci
 #bin/display
 #bin/dump-ramdump.sh
 #bin/ext4_resize
-system/bin/factory
+#system/bin/factory # commented 2016/10/08
 #bin/idme
 #bin/kdestroy
 #bin/kinit
@@ -60,14 +60,12 @@ system/lib/hw/audio.r_submix.default.so
 #lib/hw/audio.sco.default.so
 system/lib/hw/audio.usb.default.so
 system/lib/hw/camera.mt8127.so
-system/lib/hw/gps.default.so
 system/lib/hw/gralloc.default.so
 system/lib/hw/gralloc.mt8127.so
 system/lib/hw/hwcomposer.mt8127.so
 system/lib/hw/keystore.default.so
 #lib/hw/keystore.mt8127.so
 #lib/hw/lights.mt8127.so
-system/lib/hw/lights.default.so
 system/lib/hw/local_time.default.so
 #lib/hw/memtrack.mt8127.so	## memtrack !! Could it solve the errors in Tab2A710F logcat ?
 #lib/hw/perfboost.default.so
@@ -237,7 +235,64 @@ system/lib/libdrmmtkwhitelist.so
 system/lib/libbluetoothdrv.so
 system/lib/libwapi.so
 
-# "not found" in logcat, but not in stock rom. get it from ford if present ?
+# added 2016/10/07
+system/lib/hw/lights.default.so
+system/lib/hw/gps.default.so
+
+# added 2016/10/08
+#system/etc/factory.ini # not needed, commented 2016/10/08
+system/bin/logwrapper
+system/bin/ipod
+system/lib/libfmmt6620.so
+# gps
+system/lib/libcurl.so
+system/lib/libmnl.so
+
+
+
+### PPP/RIL/... stock blobs, try it later, commented for now ==> to be checked ! TODO
+## PPP
+## pppd binary is built by CM, but :
+## pppd: This system lacks kernel support for PPP.  This could be because
+## the PPP kernel module could not be loaded, or because PPP was not
+#system/bin/pppd
+## other pppd related
+#system/bin/pppd_btdun
+#system/lib/libpppbtdun.so
+#system/bin/init.gprs-pppd
+## there are some configs in system/etc/ppp => take them ?
+## RIL
+#system/bin/mtkrild
+#system/lib/mtk-ril.so
+#system/lib/librilmtk.so
+#system/lib/libril_dongle.so
+#system/lib/mtk-rilmd2.so
+#system/lib/librilmtkmd2.so
+#system/bin/dongled
+#system/bin/rild_dongle
+#system/etc/permissions/android.mediatek.tedongle.xml
+#system/etc/dongle_supported_list.txt
+#system/etc/dongleselect.conf
+#system/lib/libril_dongle.so
+#system/framework/tedongle-telephony.jar
+#system/bin/gsm0710muxd
+#system/bin/gsm0710muxdmd2
+# RIL related
+#system/bin/ccci_mdinit
+#system/bin/ccci_fsd
+#system/lib/libccci_util.so
+#system/bin/muxreport
+### / PPP/RIL/...
+
+
+# missing frameworks (init.environ.rc) - blobs or built with frameworks repo or do not use at all ? TODO
+#system/framework/dolby_ds.jar
+#system/framework/mediatek-common.jar
+#system/framework/mediatek-framework.jar
+#system/framework/mediatek-telephony-common.jar
+
+
+# "not found" in logcat, but not in stock rom. get it from ford if present ? # 2016/10/08 => not anymore ? TODO
 #system/lib/libMtkOmxWmaDec.so
 
 # replaces vendor file in ford. keep it ?
@@ -249,7 +304,7 @@ system/etc/audio_policy.conf
 system/vendor/app/Ds/Ds.apk
 system/vendor/app/DsUI/DsUI.apk
 system/vendor/etc/audio_effects.conf
-system/etc/media_codecs.xml
+#system/etc/media_codecs.xml # commented 2016/10/08
 system/vendor/etc/dolby/ds1-default.xml
 system/vendor/lib/hw/audio.a2dp.blueangel.so
 system/vendor/lib/hw/bluetooth.blueangel.so
