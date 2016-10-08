@@ -73,6 +73,16 @@ PRODUCT_COPY_FILES += \
     #system/etc/permissions/platform.xml
     #system/etc/permissions/android.mediatek.tedongle.xml
 
+# Media codecs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_codecs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media_codecs/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
+    $(LOCAL_PATH)/media_codecs/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    $(LOCAL_PATH)/media_codecs/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    $(LOCAL_PATH)/media_codecs/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/media_codecs/media_profiles.xml:system/etc/media_profiles.xml
+
+
 $(call inherit-product-if-exists, vendor/lenovo/Tab2A710F/Tab2A710F-vendor.mk)
 
 # Audio
