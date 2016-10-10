@@ -191,7 +191,7 @@ system/lib/libvcodec_utility.so
 system/lib/libvcodecdrv.so
 system/lib/libvp8dec_sa.ca7.so
 system/lib/libvp9dec_sa.ca7.so
-system/lib/libwpa_client.so
+#system/lib/libwpa_client.so # Commented 2016/10/10
 #lib/modules/ufsd.ko
 # /1
 
