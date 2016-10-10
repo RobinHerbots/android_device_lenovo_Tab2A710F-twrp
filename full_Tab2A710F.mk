@@ -8,7 +8,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
-TARGET_BUILD_VARIANT := eng
+TARGET_BUILD_VARIANT := userdebug
 TARGET_BUILD_TYPE := debug
 
 # init
