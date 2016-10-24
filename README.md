@@ -3,7 +3,7 @@ Android device tree for Lenovo Tab2A7-10F
 
 
 
-# THIS BRANCH OF IS AN ARCHIVE
+# THIS BRANCH IS AN ARCHIVE
 
 
 
