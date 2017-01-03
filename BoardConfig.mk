@@ -24,13 +24,6 @@ BOARD_MKBOOTIMG_ARGS := --base 80000000 --pagesize 2048 --kernel_offset 00008000
 # Kernel
 #
 TARGET_PREBUILT_RECOVERY_KERNEL := device/lenovo/Tab2A710F/kernel
-#TARGET_PREBUILT_KERNEL := device/lenovo/Tab2A710F/kernel
-#BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
-#TARGET_KERNEL_SOURCE := kernel/lenovo/Tab2A710F
-#TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
-#TARGET_KERNEL_SOURCE := kernel/mediatek
-#TARGET_KERNEL_CONFIG := mtk_pix_defconfig
-#TARGET_KMODULES := true
 
 #
 # Debug
