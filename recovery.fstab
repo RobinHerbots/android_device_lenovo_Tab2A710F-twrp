@@ -2,7 +2,7 @@
 
 /boot		emmc	/dev/bootimg		flags=display="Boot";backup=1;flashimg=1
 /uboot		emmc	/dev/uboot		flags=display="Uboot";backup=1
-/misc		emmc	/dev/misc		flags=display="Misc";backup=1
+#/misc		emmc	/dev/misc		flags=display="Misc";backup=1
 #/logo		emmc	/dev/logo		flags=display="Logo";backup=1
 /logo		emmc	/dev/logo		flags=display="Logo";backup=1;flashimg=1
 /nvram		emmc	/dev/nvram		flags=display="Nvram";backup=1;flashimg=1
