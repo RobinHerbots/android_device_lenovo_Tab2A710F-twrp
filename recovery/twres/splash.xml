@@ -5,7 +5,7 @@
 		<author>TeamWin</author>
 		<title>TWRP</title>
 		<description>splash screen</description>
-		<themeversion>1</themeversion>
+		<themeversion>2</themeversion>
 	</details>
 
 	<resources>
@@ -43,7 +43,7 @@
 			<text color="%header_color%">
 				<font resource="font_l"/>
 				<placement x="240" y="680" placement="5"/>
-				<text>Recovery Project %tw_version%</text>
+				<text>Recovery Project %tw_version% (build: Pix106 v0.24)</text>
 			</text>
 		</page>
 	</pages>
