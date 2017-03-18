@@ -55,6 +55,6 @@ TW_INCLUDE_NTFS_3G := true
 #TW_NEVER_UNMOUNT_SYSTEM := true	# Prevent TWRP from unmounting /system
 
 # Theme and graphics
-#TW_THEME := portrait_mdpi
-TW_CUSTOM_THEME := device/lenovo/Tab2A710F/recovery/twres
+TW_THEME := portrait_mdpi
+#TW_CUSTOM_THEME := device/lenovo/Tab2A710F/recovery/twres
 
