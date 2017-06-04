@@ -58,3 +58,4 @@ BOARD_SUPPRESS_SECURE_ERASE := true # "Some MMCs have VERY slow secure erase - u
 # Theme and graphics
 TW_THEME := portrait_mdpi
 #TW_CUSTOM_THEME := device/lenovo/Tab2A710F/recovery/twres
+TW_INCLUDE_FB2PNG := true
