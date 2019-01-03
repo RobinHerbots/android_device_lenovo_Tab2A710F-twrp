@@ -17,7 +17,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto
 #
 # Boot
 #
-BOARD_CUSTOM_BOOTIMG_MK := device/lenovo/Tab2A710F/boot.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/lenovo/Tab2A710F/bootimg.mk
 BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x00000100 --board 1438361675
 
 #
