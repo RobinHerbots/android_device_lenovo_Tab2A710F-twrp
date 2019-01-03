@@ -23,7 +23,8 @@ BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x0000
 #
 # Kernel
 #
-TARGET_PREBUILT_RECOVERY_KERNEL := device/lenovo/Tab2A710F/kernel
+TARGET_PREBUILT_KERNEL := device/lenovo/Tab2A710F/kernel
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 
 #
 # Debug
