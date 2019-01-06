@@ -2,3 +2,5 @@
 Android device tree for Lenovo Tab2A7-10F
 
 Can only build TWRP Recovery
+
+WIP
